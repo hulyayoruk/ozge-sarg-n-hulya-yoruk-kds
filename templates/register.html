@@ -1,0 +1,36 @@
+{% extends "auth_layout.html" %}
+
+{% block title %}Kayıt Ol{% endblock %}
+{% block heading %}Yeni Öğretmen Hesabı Oluştur{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{{ url_for('register') }}">
+
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">E-posta Adresi</label>
+            <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="ayse.yilmaz@okul.edu">
+        </div>
+
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700">Ad Soyad</label>
+            <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Ayşe Yılmaz">
+        </div>
+
+        <div class="mb-6">
+            <label for="password" class="block text-sm font-medium text-gray-700">Şifre Oluştur</label>
+            <input type="password" id="password" name="password" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••">
+        </div>
+
+        <button type="submit" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150">
+            Hemen Kaydol
+        </button>
+    </form>
+
+    <div class="mt-6 text-center">
+        <p class="text-sm text-gray-600">
+            Zaten hesabınız var mı?
+            <a href="{{ url_for('login') }}" class="font-medium text-blue-600 hover:text-blue-500">Giriş Yap</a>
+        </p>
+    </div>
+
+{% endblock %}
